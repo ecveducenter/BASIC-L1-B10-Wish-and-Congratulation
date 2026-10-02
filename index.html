@@ -1,0 +1,960 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1d4055">
+  <title>Lesson 10: Wishes &amp; Congratulation | Basic English</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1d4055;
+      --ink-soft: #31596b;
+      --coral: #ee7969;
+      --gold: #f5b63f;
+      --mint: #e4f2ec;
+      --paper: #fff;
+      --card: #fffefa;
+      --line: #d9e4dd;
+      --muted: #71818a;
+      --green: #287856;
+      --red: #bd5144;
+      --shadow: 0 18px 50px rgb(29 64 85 / 8%);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--mint);
+      color: var(--ink);
+      font-family: "Trebuchet MS", Aptos, sans-serif;
+      line-height: 1.55;
+    }
+    button, input { font: inherit; }
+
+    .topbar {
+      display: flex;
+      min-height: 106px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 16px max(32px, calc((100vw - 1440px) / 2));
+      border-bottom: 6px solid var(--coral);
+      background: var(--ink);
+      color: white;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: .16em;
+    }
+    .brand-mark {
+      display: grid;
+      width: 66px;
+      height: 66px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--coral);
+      color: var(--ink);
+      font-family: Georgia, serif;
+      font-size: 38px;
+      letter-spacing: 0;
+    }
+    .lesson-label {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-align: right;
+      text-transform: uppercase;
+    }
+    .lesson-label span { padding: 0 12px; color: var(--coral); }
+
+    main {
+      width: min(100% - 64px, 1400px);
+      margin: 58px auto 40px;
+      padding: 56px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 54px;
+      padding: clamp(42px, 8vw, 76px);
+      border-radius: 38px;
+      background: var(--ink);
+      color: white;
+      isolation: isolate;
+    }
+    .hero::before, .hero::after {
+      position: absolute;
+      z-index: -1;
+      width: 570px;
+      height: 570px;
+      border: 1px solid rgb(255 255 255 / 8%);
+      border-radius: 50%;
+      content: "";
+    }
+    .hero::before { top: -300px; right: 12%; }
+    .hero::after { top: -275px; right: 15%; width: 520px; height: 520px; }
+    .eyebrow {
+      margin: 0 0 22px;
+      color: #b8d0d7;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 750px;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(48px, 8vw, 82px);
+      line-height: 1.02;
+      letter-spacing: -.035em;
+    }
+    h1 span { color: var(--coral); }
+    .intro {
+      max-width: 770px;
+      margin: 28px 0 0;
+      color: #e7eef0;
+      font-size: clamp(17px, 2.1vw, 22px);
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 13px 24px;
+      margin-top: 35px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .hero-meta .dot { color: var(--coral); }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 0 0 20px;
+    }
+    h2 {
+      margin: 0;
+      font-size: clamp(21px, 3vw, 28px);
+      line-height: 1.3;
+    }
+    .selected-count {
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .selected-count strong { color: var(--ink); }
+    .instructions { margin: 0 0 22px; color: var(--muted); }
+    .progress-track {
+      height: 8px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      border-radius: 99px;
+      background: var(--mint);
+    }
+    .progress-bar {
+      width: 0;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--coral);
+      transition: width .2s ease;
+    }
+    .questions { display: grid; gap: 34px; }
+    .question {
+      min-width: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+    .question legend {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      gap: 20px;
+      padding: 0;
+    }
+    .question-number {
+      display: grid;
+      flex: 0 0 44px;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      margin: 0;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .sentence {
+      display: block;
+      font-size: 23px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    .choices {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin: 20px 0 0 64px;
+    }
+    .choice {
+      position: relative;
+      display: flex;
+      min-width: 0;
+      min-height: 80px;
+      align-items: center;
+      gap: 15px;
+      padding: 16px 20px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: white;
+      cursor: pointer;
+      transition: border-color .15s ease, background-color .15s ease;
+    }
+    .choice:hover { border-color: var(--ink-soft); }
+    .choice:has(input:checked) {
+      border-color: var(--ink);
+      background: #eff6f2;
+    }
+    .choice input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .choice-letter {
+      display: grid;
+      flex: 0 0 34px;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 50%;
+      background: #eff3ef;
+      color: var(--ink-soft);
+      font-weight: 800;
+    }
+    .choice-text { overflow-wrap: anywhere; font-size: 21px; }
+    .question.is-correct .choice:has(input:checked) { border-color: #8ac2a7; }
+    .question.is-incorrect .choice:has(input:checked) { border-color: #dfa39b; }
+    .question.is-correct .choice:has(input:checked) {
+      background: #edf7f1;
+    }
+    .question.is-incorrect .choice:has(input:checked) {
+      background: #fff1ef;
+    }
+    .question-feedback {
+      min-height: 0;
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .question-feedback:not(:empty) { margin: 12px 0 0 64px; }
+    .is-correct .question-feedback { color: var(--green); }
+    .is-incorrect .question-feedback { color: var(--red); }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-top: 26px;
+    }
+    .action-button {
+      min-height: 48px;
+      padding: 11px 22px;
+      border: 1px solid var(--ink);
+      border-radius: 6px;
+      background: var(--ink);
+      color: white;
+      cursor: pointer;
+      font-weight: 800;
+      transition: transform .15s ease, background-color .15s ease;
+    }
+    .action-button:hover { transform: translateY(-1px); background: var(--ink-soft); }
+    .action-button:disabled {
+      transform: none;
+      background: #aab8bd;
+      border-color: #aab8bd;
+      cursor: not-allowed;
+    }
+    .action-button.secondary {
+      background: white;
+      color: var(--ink);
+    }
+    .action-button.secondary:hover { background: #eff6f2; }
+    .action-button:focus-visible, .choice:focus-within {
+      outline: 3px solid rgb(238 121 105 / 55%);
+      outline-offset: 2px;
+    }
+    .result {
+      flex: 1 1 100%;
+      min-height: 1.5em;
+      margin: 0;
+      color: var(--ink);
+      font-size: 17px;
+      font-weight: 700;
+    }
+    .drill-section {
+      margin-top: 58px;
+      padding-top: 42px;
+      border-top: 1px solid var(--line);
+    }
+    .drill-list { display: grid; gap: 22px; }
+    .drill-card {
+      min-width: 0;
+      padding: 22px 24px 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--card);
+    }
+    .drill-number {
+      margin: 0 0 16px;
+      color: var(--coral);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .08em;
+    }
+    .word-bank, .answer-zone {
+      display: flex;
+      min-height: 60px;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+    .word-bank { margin-bottom: 16px; }
+    .word-chip {
+      min-height: 56px;
+      padding: 10px 17px;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      background: #eaf0f0;
+      color: var(--ink);
+      cursor: grab;
+      font-size: 19px;
+      transition: opacity .15s ease, background-color .15s ease, transform .15s ease;
+    }
+    .word-chip:hover:not(:disabled) { transform: translateY(-1px); background: #dfe9e9; }
+    .word-chip:active { cursor: grabbing; }
+    .word-chip:disabled {
+      opacity: .4;
+      cursor: default;
+      text-decoration: line-through;
+    }
+    .word-chip:focus-visible {
+      outline: 3px solid rgb(238 121 105 / 55%);
+      outline-offset: 2px;
+    }
+    .answer-zone {
+      min-height: 112px;
+      align-content: flex-start;
+      padding: 14px 17px;
+      border: 1px dashed #a8c2cb;
+      border-radius: 7px;
+      background: white;
+      transition: border-color .15s ease, background-color .15s ease;
+    }
+    .answer-zone.is-over {
+      border-color: var(--ink-soft);
+      background: #f3f8f7;
+    }
+    .answer-placeholder {
+      align-self: flex-start;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .answer-zone .word-chip {
+      min-height: 44px;
+      padding: 8px 12px;
+      background: #f2f5f3;
+      cursor: pointer;
+    }
+    .answer-zone .word-chip:hover { background: #eaf0ec; }
+    .drill-translation {
+      margin: 23px 10px 15px;
+      color: var(--ink);
+      font-size: 19px;
+    }
+    .substitutions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 9px 24px;
+      margin: 0 10px;
+      color: var(--ink);
+      font-size: 15px;
+    }
+    .substitutions-label { font-weight: 800; }
+    .substitution { white-space: nowrap; }
+    .substitution strong { margin-right: 6px; }
+    .substitution span { color: var(--muted); }
+    .drill-feedback { margin: 0; font-weight: 700; }
+    .drill-card.is-correct .drill-feedback { color: var(--green); }
+    .drill-card.is-incorrect .drill-feedback { color: var(--red); }
+    footer {
+      margin-top: 42px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .09em;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .topbar { min-height: 78px; padding: 10px 18px; gap: 12px; }
+      .brand { gap: 10px; font-size: 13px; }
+      .brand-mark { width: 48px; height: 48px; font-size: 29px; }
+      .lesson-label { font-size: 10px; letter-spacing: .07em; }
+      .lesson-label span { padding: 0 4px; }
+      main { width: min(100% - 24px, 1400px); margin: 20px auto; padding: 16px; }
+      .hero { margin-bottom: 36px; padding: 38px 26px; border-radius: 24px; }
+      .hero-meta { gap: 8px 14px; margin-top: 26px; font-size: 13px; }
+      .section-heading { align-items: flex-start; flex-direction: column; gap: 5px; }
+      .questions { gap: 28px; }
+      .question legend { gap: 12px; }
+      .question-number { flex-basis: 40px; width: 40px; height: 40px; }
+      .sentence { font-size: 18px; }
+      .choices { gap: 8px; margin: 14px 0 0 52px; }
+      .choice { min-height: 64px; padding: 12px 14px; }
+      .choice-letter { flex-basis: 30px; width: 30px; height: 30px; }
+      .choice-text { font-size: 16px; }
+      .question-feedback:not(:empty) { margin-left: 52px; }
+      .drill-section { margin-top: 42px; padding-top: 30px; }
+      .drill-card { padding: 18px 14px 20px; }
+      .word-bank, .answer-zone { gap: 8px; }
+      .word-chip { min-height: 46px; padding: 8px 12px; font-size: 16px; }
+      .answer-zone { min-height: 96px; padding: 12px; }
+      .answer-placeholder { font-size: 15px; }
+      .answer-zone .word-chip { min-height: 40px; padding: 7px 10px; }
+      .drill-translation { margin: 19px 2px 13px; font-size: 17px; }
+      .substitutions { gap: 8px 14px; margin: 0 2px; font-size: 14px; }
+      .substitution { white-space: normal; }
+    }
+    @media (min-width: 1200px) {
+      .drill-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .drill-card { padding: 24px 26px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">B</span>
+      <span>BASIC ENGLISH</span>
+    </div>
+    <div class="lesson-label">LESSON 10 <span>/</span> WISHES &amp; CONGRATULATION</div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">Everyday conversation</p>
+      <h1 id="page-title">Wishes <span>&amp;</span><br>Congratulation</h1>
+      <p class="intro">Những lời chúc, lời chúc mừng và lời động viên trong giao tiếp hằng ngày.</p>
+      <div class="hero-meta">
+        <span>15 câu luyện tập</span><span class="dot" aria-hidden="true">•</span><span>English · Vietnamese</span>
+      </div>
+    </section>
+
+    <form id="quiz-form">
+      <section aria-labelledby="section-title">
+        <div class="section-heading">
+          <h2 id="section-title">PHẦN I &nbsp; Basic sentences | Mẫu câu cơ bản</h2>
+          <p class="selected-count" aria-live="polite">Đã chọn <strong id="selected-count">0 / 15</strong> câu</p>
+        </div>
+        <p class="instructions">Chọn nghĩa tiếng Việt phù hợp nhất cho mỗi câu.</p>
+        <div class="progress-track" role="progressbar" aria-label="Tiến độ hoàn thành" aria-valuemin="0" aria-valuemax="15" aria-valuenow="0">
+          <div class="progress-bar"></div>
+        </div>
+        <div class="questions" id="questions"></div>
+      </section>
+
+      <section class="drill-section" aria-labelledby="drill-title">
+        <div class="section-heading">
+          <h2 id="drill-title">PHẦN II &nbsp; Substitution Drills | Bài tập thay thế</h2>
+          <p class="selected-count" aria-live="polite">Đã ghép đủ <strong id="drill-count">0 / 15</strong> câu</p>
+        </div>
+        <p class="instructions">Nhấp vào từ hoặc kéo từ vào khung để sắp xếp lại câu. Nhấp vào từ trong khung để đưa từ trở lại.</p>
+        <div class="progress-track" role="progressbar" aria-label="Tiến độ bài tập thay thế" aria-valuemin="0" aria-valuemax="15" aria-valuenow="0">
+          <div class="progress-bar"></div>
+        </div>
+        <div class="drill-list" id="drill-list"></div>
+        <div class="actions">
+          <button class="action-button" id="submit-quiz" type="submit" disabled>Nộp bài (0 / 30)</button>
+          <button class="action-button secondary" id="reset-button" type="reset">Làm lại</button>
+          <p class="result" id="result" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+    </form>
+
+    <footer>BASIC ENGLISH &nbsp;·&nbsp; LESSON 10</footer>
+  </main>
+
+  <script>
+    const sentences = [
+      ["Congratulations", "Xin chúc mừng"],
+      ["I’m sure you deserve it", "Thầy tin chắc là em xứng đáng với công việc đó"],
+      ["I’m sure you’ll do fine", "Thầy tin chắc là em sẽ làm tốt"],
+      ["Good luck", "Chúc may mắn"],
+      ["I wish you the best", "Tôi chúc anh điều tốt đẹp nhất"],
+      ["That’s great", "Thật tuyệt"],
+      ["Outstanding", "Xuất sắc"],
+      ["Allow me to congratulate you", "Cho phép tôi được chúc mừng anh"],
+      ["I wish you well", "Tôi chúc anh mạnh khỏe"],
+      ["You have my best wishes", "Tôi chúc anh những lời tốt đẹp nhất"],
+      ["Good job", "Làm tốt đấy"],
+      ["Please accept my warmest congratulations", "Xin hãy nhận lời chúc mừng nồng nhiệt nhất của tôi"],
+      ["I must congratulate you", "Tôi phải chúc mừng anh mới được"],
+      ["I wish you nothing but the best", "Tôi chẳng chúc anh điều gì ngoài những điều tốt đẹp nhất"],
+      ["I wish you good luck", "Tôi chúc anh may mắn"]
+    ];
+
+    const drills = [
+      {
+        sentence: "Four years of college and now I'm done.",
+        translation: "Bốn năm đại học và bây giờ con đã học xong.",
+        substitutions: [["it's finished", "đã xong"], ["it's over", "đã xong"], ["it's at an end", "đã kết thúc"]]
+      },
+      {
+        sentence: "Yes, you seem to have grown up so fast.",
+        translation: "Phải, dường như con đã trưởng thành rất nhanh.",
+        substitutions: [["matured", "trưởng thành"], ["aged", "lớn lên"], ["gotten older", "lớn lên"]]
+      },
+      {
+        sentence: "I did put in a little of my own effort too, you know.",
+        translation: "Mẹ biết là con cũng đã nỗ lực một chút đấy chứ.",
+        substitutions: [["give", "nỗ lực"], ["contribute", "nỗ lực"], ["chip in", "nỗ lực"]]
+      },
+      {
+        sentence: "I've just been offered a job by a good law firm in Philadelphia.",
+        translation: "Em vừa được một hãng luật nổi tiếng ở Philadelphia mời làm.",
+        substitutions: [["position", "một vị trí"], ["contract", "ký hợp đồng"], ["post", "một chức vụ"]]
+      },
+      {
+        sentence: "This has been one of my best classes in law school.",
+        translation: "Đây là một trong những giờ học hay nhất em đã được học ở trường luật.",
+        substitutions: [["worst", "tệ nhất"], ["favorite", "ưa thích nhất"], ["most interesting", "thú vị nhất"]]
+      },
+      {
+        sentence: "I heard you just got a promotion.",
+        translation: "Mình nghe nói là bạn vừa được thăng chức.",
+        substitutions: [["a demotion", "bị giáng chức"], ["an advancement", "được thăng tiến"], ["a transfer", "được thuyên chuyển"]]
+      },
+      {
+        sentence: "Yeah, I'm the new supervisor for sales.",
+        translation: "Phải, mình là giám sát kinh doanh mới.",
+        substitutions: [["marketing", "tiếp thị"], ["accounting", "kế toán"], ["research", "nghiên cứu"]]
+      },
+      {
+        sentence: "You deserve the promotion.",
+        translation: "Bạn xứng đáng được thăng chức mà.",
+        substitutions: [["earned", "xứng đáng"], ["warrant", "xứng đáng"], ["merit", "xứng đáng"]]
+      },
+      {
+        sentence: "I think that's the last box.",
+        translation: "Mình nghĩ đó là thùng cuối cùng.",
+        substitutions: [["container", "công-ten-nơ"], ["crate", "thùng"], ["carton", "thùng"]]
+      },
+      {
+        sentence: "I'm sure you could get a job at one of the museums with your background.",
+        translation: "Mình tin chắc là với nhân thân của bạn, bạn có thể xin được việc làm ở một trong các viện bảo tàng ở đó.",
+        substitutions: [["experience", "kinh nghiệm"], ["training", "việc đào tạo"], ["education", "nền học vấn"]]
+      },
+      {
+        sentence: "It's going to be a big change of pace.",
+        translation: "Nhịp sống sẽ thay đổi nhiều.",
+        substitutions: [["tempo", "nhịp độ"], ["scenery", "phong cảnh"], ["life", "cuộc sống"]]
+      },
+      {
+        sentence: "It's supposed to let up by tomorrow.",
+        translation: "Có lẽ ngày mai sẽ ngớt mưa thôi.",
+        substitutions: [["stop", "tạnh"], ["cease", "ngừng"], ["ease off", "bớt"]]
+      },
+      {
+        sentence: "If anything goes wrong, it's not your fault.",
+        translation: "Nếu có gì trục trặc thì đó không phải là lỗi của bạn.",
+        substitutions: [["concern", "mối quan tâm"], ["worry", "nỗi lo"], ["problem", "vấn đề"]]
+      },
+      {
+        sentence: "No longer single, huh?",
+        translation: "Không còn độc thân nữa, đúng không?",
+        substitutions: [["unmarried", "độc thân"], ["unattached", "đơn lẻ"], ["alone", "một mình"]]
+      },
+      {
+        sentence: "I wish you two the best in life.",
+        translation: "Mình chúc cả hai bạn điều tốt đẹp nhất trong cuộc sống.",
+        substitutions: [["a happy life", "một cuộc sống hạnh phúc"], ["happiness", "hạnh phúc"], ["many happy years", "rất nhiều năm tháng hạnh phúc"]]
+      }
+    ];
+
+    const questions = document.querySelector("#questions");
+    const form = document.querySelector("#quiz-form");
+    const count = document.querySelector("#selected-count");
+    const progress = document.querySelector(".progress-track");
+    const progressBar = document.querySelector(".progress-bar");
+    const result = document.querySelector("#result");
+    const submitButton = document.querySelector("#submit-quiz");
+    const letters = ["A", "B", "C", "D"];
+
+    function shuffle(items) {
+      const shuffled = [...items];
+      for (let index = shuffled.length - 1; index > 0; index -= 1) {
+        const randomIndex = Math.floor(Math.random() * (index + 1));
+        [shuffled[index], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[index]];
+      }
+      return shuffled;
+    }
+
+    function createQuestion(sentence, index) {
+      const correctAnswer = { text: sentence[1], correct: true };
+      const distractors = shuffle(sentences
+        .filter(item => item[1] !== sentence[1])
+        .map(item => ({ text: item[1], correct: false })))
+        .slice(0, letters.length - 1);
+      const options = shuffle([correctAnswer, ...distractors]);
+
+      const fieldset = document.createElement("fieldset");
+      fieldset.className = "question";
+
+      const legend = document.createElement("legend");
+      const number = document.createElement("span");
+      number.className = "question-number";
+      number.textContent = String(index + 1).padStart(2, "0");
+      const phrase = document.createElement("span");
+      phrase.className = "sentence";
+      phrase.textContent = sentence[0];
+      legend.append(number, phrase);
+      fieldset.append(legend);
+
+      const choices = document.createElement("div");
+      choices.className = "choices";
+      options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "choice";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `answer-${index}`;
+        input.value = String(optionIndex);
+        input.dataset.correct = String(option.correct);
+        const letter = document.createElement("span");
+        letter.className = "choice-letter";
+        letter.textContent = letters[optionIndex];
+        const text = document.createElement("span");
+        text.className = "choice-text";
+        text.textContent = option.text;
+        label.append(input, letter, text);
+        choices.append(label);
+      });
+      fieldset.append(choices);
+
+      const feedback = document.createElement("p");
+      feedback.className = "question-feedback";
+      feedback.setAttribute("aria-live", "polite");
+      fieldset.append(feedback);
+      return fieldset;
+    }
+
+    sentences.forEach((sentence, index) => questions.append(createQuestion(sentence, index)));
+
+    function updateProgress() {
+      const selected = form.querySelectorAll('input[type="radio"]:checked').length;
+      count.textContent = `${selected} / ${sentences.length}`;
+      progress.setAttribute("aria-valuenow", String(selected));
+      progressBar.style.width = `${(selected / sentences.length) * 100}%`;
+      updateSubmitButton();
+    }
+
+    form.addEventListener("change", event => {
+      if (event.target.matches('input[type="radio"]')) {
+        updateProgress();
+        clearGradingFeedback();
+      }
+    });
+
+    form.addEventListener("reset", () => {
+      requestAnimationFrame(() => {
+        questions.querySelectorAll(".question").forEach(question => {
+          question.classList.remove("is-correct", "is-incorrect");
+          question.querySelector(".question-feedback").textContent = "";
+        });
+        result.textContent = "";
+        drillList.querySelectorAll(".drill-card").forEach(resetDrill);
+        shuffleQuestionOrder();
+        updateProgress();
+      });
+    });
+
+    const drillList = document.querySelector("#drill-list");
+    const drillCount = document.querySelector("#drill-count");
+    const drillProgress = document.querySelector(".drill-section .progress-track");
+    const drillProgressBar = drillProgress.querySelector(".progress-bar");
+    const drillStates = new WeakMap();
+
+    function getCompletedDrills() {
+      return [...drillList.querySelectorAll(".drill-card")].filter(card => {
+        const state = drillStates.get(card);
+        return state.zone.querySelectorAll(".word-chip").length === state.wordCount;
+      }).length;
+    }
+
+    function refreshDrillProgress() {
+      const completed = getCompletedDrills();
+      drillCount.textContent = `${completed} / ${drills.length}`;
+      drillProgress.setAttribute("aria-valuenow", String(completed));
+      drillProgressBar.style.width = `${(completed / drills.length) * 100}%`;
+      updateSubmitButton();
+    }
+
+    function updateSubmitButton() {
+      const selected = form.querySelectorAll('input[type="radio"]:checked').length;
+      const completedDrills = typeof drillList === "undefined" ? 0 : getCompletedDrills();
+      const completed = selected + completedDrills;
+      submitButton.disabled = completed !== sentences.length + drills.length;
+      submitButton.textContent = `Nộp bài (${completed} / ${sentences.length + drills.length})`;
+    }
+
+    function clearGradingFeedback() {
+      questions.querySelectorAll(".question").forEach(question => {
+        question.classList.remove("is-correct", "is-incorrect");
+        question.querySelector(".question-feedback").textContent = "";
+      });
+      drillList.querySelectorAll(".drill-card").forEach(card => {
+        card.classList.remove("is-correct", "is-incorrect");
+        drillStates.get(card).feedback.textContent = "";
+      });
+      result.textContent = "";
+    }
+
+    function returnDrillWord(card, tokenId) {
+      const state = drillStates.get(card);
+      const source = state.bank.querySelector(`[data-token-id="${tokenId}"]`);
+      const placed = state.zone.querySelector(`[data-token-id="${tokenId}"]`);
+      if (!source || !placed) return;
+      source.disabled = false;
+      source.setAttribute("aria-pressed", "false");
+      placed.remove();
+      clearGradingFeedback();
+      updateDrillPlaceholder(card);
+      refreshDrillProgress();
+    }
+
+    function updateDrillPlaceholder(card) {
+      const zone = drillStates.get(card).zone;
+      const placeholder = zone.querySelector(".answer-placeholder");
+      const isEmpty = !zone.querySelector(".word-chip");
+      if (isEmpty && !placeholder) {
+        const message = document.createElement("span");
+        message.className = "answer-placeholder";
+        message.textContent = "Nhấp vào từ phía trên hoặc kéo từ vào đây";
+        zone.append(message);
+      } else if (!isEmpty && placeholder) {
+        placeholder.remove();
+      }
+    }
+
+    function placeDrillWord(card, tokenId) {
+      const state = drillStates.get(card);
+      const source = state.bank.querySelector(`[data-token-id="${tokenId}"]`);
+      if (!source || source.disabled) return;
+      const placed = document.createElement("button");
+      placed.type = "button";
+      placed.className = "word-chip";
+      placed.dataset.tokenId = tokenId;
+      placed.textContent = source.textContent;
+      placed.setAttribute("aria-label", `${source.textContent}; nhấp để đưa từ về ngân hàng`);
+      placed.addEventListener("click", () => returnDrillWord(card, tokenId));
+      source.disabled = true;
+      source.setAttribute("aria-pressed", "true");
+      state.zone.append(placed);
+      updateDrillPlaceholder(card);
+      clearGradingFeedback();
+      refreshDrillProgress();
+    }
+
+    function createDrill(drill, index) {
+      const card = document.createElement("article");
+      card.className = "drill-card";
+
+      const number = document.createElement("p");
+      number.className = "drill-number";
+      number.textContent = String(index + 1).padStart(2, "0");
+      card.append(number);
+
+      const bank = document.createElement("div");
+      bank.className = "word-bank";
+      bank.setAttribute("role", "group");
+      bank.setAttribute("aria-label", `Từ để sắp xếp câu ${index + 1}`);
+
+      const zone = document.createElement("div");
+      zone.className = "answer-zone";
+      zone.setAttribute("role", "group");
+      zone.setAttribute("aria-label", `Câu trả lời ${index + 1}`);
+
+      const feedback = document.createElement("p");
+      feedback.className = "drill-feedback";
+      feedback.setAttribute("aria-live", "polite");
+      const tokens = shuffle(drill.sentence.split(/\s+/));
+      drillStates.set(card, { bank, zone, feedback, sentence: drill.sentence, wordCount: tokens.length });
+
+      tokens.forEach((token, tokenIndex) => {
+        const chip = document.createElement("button");
+        chip.type = "button";
+        chip.className = "word-chip";
+        chip.textContent = token;
+        chip.dataset.tokenId = String(tokenIndex);
+        chip.draggable = true;
+        chip.setAttribute("aria-pressed", "false");
+        chip.addEventListener("click", () => placeDrillWord(card, String(tokenIndex)));
+        chip.addEventListener("dragstart", event => {
+          if (chip.disabled) {
+            event.preventDefault();
+            return;
+          }
+          event.dataTransfer.setData("text/plain", String(tokenIndex));
+          event.dataTransfer.effectAllowed = "move";
+        });
+        bank.append(chip);
+      });
+
+      zone.addEventListener("dragover", event => {
+        event.preventDefault();
+        event.dataTransfer.dropEffect = "move";
+        zone.classList.add("is-over");
+      });
+      zone.addEventListener("dragleave", event => {
+        if (!zone.contains(event.relatedTarget)) zone.classList.remove("is-over");
+      });
+      zone.addEventListener("drop", event => {
+        event.preventDefault();
+        zone.classList.remove("is-over");
+        placeDrillWord(card, event.dataTransfer.getData("text/plain"));
+      });
+
+      const translation = document.createElement("p");
+      translation.className = "drill-translation";
+      translation.textContent = drill.translation;
+
+      const substitutions = document.createElement("div");
+      substitutions.className = "substitutions";
+      const label = document.createElement("span");
+      label.className = "substitutions-label";
+      label.textContent = "Từ thay thế:";
+      substitutions.append(label);
+      drill.substitutions.forEach(([english, vietnamese]) => {
+        const item = document.createElement("span");
+        item.className = "substitution";
+        const word = document.createElement("strong");
+        word.textContent = english;
+        const meaning = document.createElement("span");
+        meaning.textContent = `(${vietnamese})`;
+        item.append(word, meaning);
+        substitutions.append(item);
+      });
+
+      card.append(bank, zone, translation, substitutions, feedback);
+      updateDrillPlaceholder(card);
+      return card;
+    }
+
+    function resetDrill(card) {
+      const state = drillStates.get(card);
+      state.zone.querySelectorAll(".word-chip").forEach(chip => chip.remove());
+      state.bank.querySelectorAll(".word-chip").forEach(chip => {
+        chip.disabled = false;
+        chip.setAttribute("aria-pressed", "false");
+      });
+      shuffle([...state.bank.children]).forEach(chip => state.bank.append(chip));
+      card.classList.remove("is-correct", "is-incorrect");
+      state.feedback.textContent = "";
+      updateDrillPlaceholder(card);
+      updateSubmitButton();
+    }
+
+    drills.forEach((drill, index) => drillList.append(createDrill(drill, index)));
+
+    function renumberQuestions() {
+      [...questions.children].forEach((question, index) => {
+        question.querySelector(".question-number").textContent = String(index + 1).padStart(2, "0");
+      });
+      [...drillList.children].forEach((card, index) => {
+        card.querySelector(".drill-number").textContent = String(index + 1).padStart(2, "0");
+        card.querySelector(".word-bank").setAttribute("aria-label", `Từ để sắp xếp câu ${index + 1}`);
+        card.querySelector(".answer-zone").setAttribute("aria-label", `Câu trả lời ${index + 1}`);
+      });
+    }
+
+    function shuffleQuestionOrder() {
+      shuffle([...questions.children]).forEach(question => questions.append(question));
+      shuffle([...drillList.children]).forEach(card => drillList.append(card));
+      questions.querySelectorAll(".question").forEach(question => {
+        const choices = question.querySelector(".choices");
+        shuffle([...choices.children]).forEach((choice, index) => {
+          choice.querySelector(".choice-letter").textContent = letters[index];
+          choices.append(choice);
+        });
+      });
+      renumberQuestions();
+      refreshDrillProgress();
+    }
+
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+      const missingQuestion = [...questions.querySelectorAll(".question")]
+        .find(question => !question.querySelector('input[type="radio"]:checked'));
+      const incompleteDrill = [...drillList.querySelectorAll(".drill-card")]
+        .find(card => drillStates.get(card).zone.querySelectorAll(".word-chip").length !== drillStates.get(card).wordCount);
+      if (missingQuestion || incompleteDrill) {
+        result.textContent = "Hoàn thành đủ 30 / 30 câu trước khi nộp bài nhé.";
+        const firstIncomplete = missingQuestion || incompleteDrill;
+        firstIncomplete.scrollIntoView({ behavior: "smooth", block: "center" });
+        firstIncomplete.querySelector("input, .word-chip")?.focus({ preventScroll: true });
+        return;
+      }
+
+      let sentenceScore = 0;
+      questions.querySelectorAll(".question").forEach(question => {
+        const selected = question.querySelector('input[type="radio"]:checked');
+        const correct = selected.dataset.correct === "true";
+        question.classList.toggle("is-correct", correct);
+        question.classList.toggle("is-incorrect", !correct);
+        question.querySelector(".question-feedback").textContent = correct
+          ? "Chính xác!"
+          : `Đáp án đúng: ${sentences[Number(selected.name.slice("answer-".length))][1]}`;
+        if (correct) sentenceScore += 1;
+      });
+
+      let drillScore = 0;
+      drillList.querySelectorAll(".drill-card").forEach(card => {
+        const state = drillStates.get(card);
+        const answer = [...state.zone.querySelectorAll(".word-chip")]
+          .map(chip => chip.textContent)
+          .join(" ");
+        const correct = answer === state.sentence;
+        card.classList.toggle("is-correct", correct);
+        card.classList.toggle("is-incorrect", !correct);
+        state.feedback.textContent = correct
+          ? "Chính xác!"
+          : "Thứ tự từ chưa chính xác. Hãy nhấp vào các từ trong khung để sắp xếp lại.";
+        if (correct) drillScore += 1;
+      });
+      result.textContent = `Kết quả: ${sentenceScore + drillScore} / 30 câu đúng (Phần I: ${sentenceScore} / 15 · Phần II: ${drillScore} / 15).`;
+    });
+
+    updateProgress();
+    refreshDrillProgress();
+  </script>
+</body>
+</html>
