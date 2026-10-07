@@ -52,17 +52,13 @@
       font-weight: 800;
       letter-spacing: .16em;
     }
-    .brand-mark {
-      display: grid;
+    .brand-logo {
+      display: block;
+      flex: 0 0 66px;
       width: 66px;
       height: 66px;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--coral);
-      color: var(--ink);
-      font-family: Georgia, serif;
-      font-size: 38px;
-      letter-spacing: 0;
+      background: white;
+      object-fit: contain;
     }
     .lesson-label {
       font-size: 14px;
@@ -414,7 +410,7 @@
     @media (max-width: 700px) {
       .topbar { min-height: 78px; padding: 10px 18px; gap: 12px; }
       .brand { gap: 10px; font-size: 13px; }
-      .brand-mark { width: 48px; height: 48px; font-size: 29px; }
+      .brand-logo { flex-basis: 48px; width: 48px; height: 48px; }
       .lesson-label { font-size: 10px; letter-spacing: .07em; }
       .lesson-label span { padding: 0 4px; }
       main { width: min(100% - 24px, 1400px); margin: 20px auto; padding: 16px; }
@@ -453,7 +449,7 @@
 <body>
   <header class="topbar">
     <div class="brand">
-      <span class="brand-mark" aria-hidden="true">B</span>
+      <img class="brand-logo" src="assets/ecv-edu-center-logo.png" alt="ECV Edu Center">
       <span>BASIC ENGLISH</span>
     </div>
     <div class="lesson-label">LESSON 10 <span>/</span> WISHES &amp; CONGRATULATION</div>
